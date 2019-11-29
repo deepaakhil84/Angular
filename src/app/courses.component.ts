@@ -1,15 +1,18 @@
 //1.create a component
 import {Component} from "@angular/core"
-@Component({
+@Component({//Html mark up to render this app
     selector:'courses',
-    template:`<h2>Courses</h2> {{title()}}`//Html mark up to render this app
+    template:`<h2>Courses</h2> {{title}}
+    <ul >
+    <li *ngFor="let course of courses">{{course}}</li> 
+    </ul>`
 })
 
 export class CoursesComponent{
     title="list of courses here";
-    get Title(){
-return this.title;
-    }
+    courses=["course1","course2","course3"]
+
+    
 
 }
 //2.Register this component in an module.Here currently one module its app (->app.module.ts)
