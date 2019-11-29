@@ -1,5 +1,6 @@
 //1.create a component
 import {Component} from "@angular/core"
+import {CoursesService} from "./courses.service";
 @Component({//Html mark up to render this app
     selector:'courses',
     template:`<h2>Courses</h2> {{title}}
@@ -10,8 +11,13 @@ import {Component} from "@angular/core"
 
 export class CoursesComponent{
     title="list of courses here";
-    courses=["course1","course2","course3"]
+    courses;
 
+    constructor(service:CoursesService){
+        this.courses=service.getCourses();
+
+
+    }
     
 
 }
