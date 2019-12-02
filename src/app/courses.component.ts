@@ -4,12 +4,14 @@ import {CoursesService} from "./courses.service";
 @Component({//Html mark up to render this app
     selector:'courses',
     template:`
+    
     <h2>Courses</h2>
     {{title}}
+    
     <img src="{{imageUrl}}"/>
-<img [src]="imageUrl2"/>
+    <img [src]="imageUrl2"/>
 
-    <ul>
+      <ul>
         <li *ngFor="let course of courses">
             {{course}}
         </li> 
@@ -21,10 +23,15 @@ import {CoursesService} from "./courses.service";
        </li> 
         
     </ul>
+
+    <!-- {{Add a button into the browsser}} -->
+    <button class="btn btn-primary">Submit Button</button>
+    
+
     <table>
     <tr>
-    <td [attr.colspan]="colspan"><h2>{{student1}}</h2></td>
-    <td [attr.colspan]="colspan"><h2>{{student2}}</h2></td>
+    <td [attr.colspan]="colspan"><h4>{{student1}}</h4></td>
+    <td [attr.colspan]="colspan"><h4>{{student2}}</h4></td>
     </tr>
     </table>
 `
