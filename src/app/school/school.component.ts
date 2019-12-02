@@ -4,8 +4,9 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'school',
-  template: `{{title}}
-  <ol *ngFor="let school of schools">
+  template: `{{title}},
+  <ol *ngFor="let school of schools ">
+  
   <li>{{school}}</li>
   </ol>
   `,
@@ -13,6 +14,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SchoolComponent  {
   title=" The institutions";
+  counter=0;
   schools;
 
   constructor(service:SchoolService) { 
