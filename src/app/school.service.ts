@@ -4,6 +4,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class SchoolService {
+  getsSchool(){
+    return["school1","school2","school3"]
 
-  constructor() { }
+  }
+
 }

@@ -1,12 +1,12 @@
-
-import {SchoolService} from "./SchoolService",
+import { SchoolService } from './../school.service';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'school',
   template: `{{title}}
   <ol *ngFor="let school of schools">
-  <li>school</li>
+  <li>{{school}}</li>
   </ol>
   `,
   
@@ -16,7 +16,7 @@ export class SchoolComponent  {
   schools;
 
   constructor(service:SchoolService) { 
-    this.schools=service.getSchool();
+    this.schools=service.getsSchool();
   }
 
   
