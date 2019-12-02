@@ -7,6 +7,8 @@ import {CoursesService} from "./courses.service";
     <h2>Courses</h2>
     {{title}}
     <img src="{{imageUrl}}"/>
+<img [src]="imageUrl2"/>
+
     <ul>
         <li *ngFor="let course of courses">
             {{course}}
@@ -26,6 +28,7 @@ import {CoursesService} from "./courses.service";
 export class CoursesComponent{
     title="list of courses here";
     imageUrl="https://placekitten.com/408/287"
+    imageUrl2="https://placekitten.com/200/286"
     courses;
     authors;
 
