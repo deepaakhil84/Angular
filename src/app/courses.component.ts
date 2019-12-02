@@ -21,6 +21,12 @@ import {CoursesService} from "./courses.service";
        </li> 
         
     </ul>
+    <table>
+    <tr>
+    <td [attr.colspan]="colspan"><h2>{{student1}}</h2></td>
+    <td [attr.colspan]="colspan"><h2>{{student2}}</h2></td>
+    </tr>
+    </table>
 `
 })
 
@@ -29,6 +35,9 @@ export class CoursesComponent{
     title="list of courses here";
     imageUrl="https://placekitten.com/408/287"
     imageUrl2="https://placekitten.com/200/286"
+    colspan=2;
+    student1="student1"
+    student2="student2"
     courses;
     authors;
 
@@ -39,3 +48,5 @@ export class CoursesComponent{
 }
 //2.Register this component in an module.Here currently one module its app (->app.module.ts)
 //3. selector render the component in (component.html)
+//attribute binding
+      
