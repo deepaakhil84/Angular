@@ -55,35 +55,39 @@ import {CoursesService} from "./courses.service";
 
 
 export class CoursesComponent{
-    title="list of courses here";
-    imageUrl="https://placekitten.com/408/287"
-    imageUrl2="https://placekitten.com/200/286"
-    colspan=2;
-    student1="student1"
-    student2="student2"
+    title = "list of courses here";
+    imageUrl =" https://placekitten.com/408/287"
+    imageUrl2 = "https://placekitten.com/200/286"
+    colspan = 2;
+    student1 = "student1"
+    student2 = "student2"
     courses;
     authors;
  
     isActive=true;
+
     onDivClick(){
         console.log("Div is clicked")
     }
+
     onClick($event){
         console.log("I am Clicked",$event)
     }
+
     onKeyUp($event){
         if($event.keyCode===13){
             console.log("keyUp event",$event.target.value)
         }
     }
+
     onKeyUp1(email){
         console.log(email);
 
     }
 
     constructor(service:CoursesService){
-        this.courses=service.getCourses();
-        this.authors=service.getAuthors();
+        this.courses = service.getCourses();
+        this.authors = service.getAuthors();
     }
 }
 //2.Register this component in an module.Here currently one module its app (->app.module.ts)
