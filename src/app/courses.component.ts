@@ -25,7 +25,9 @@ import {CoursesService} from "./courses.service";
     </ul>
 
     <!-- {{Add a button into the browsser}} -->
-    <button class="btn btn-primary" [class.active]="isActive">Submit Button</button>
+    <button class="btn btn-primary" [class.active]="isActive">Class Binding</button>
+    <button type="button" class="btn "[style.backgroundColor] = "isActive ? 'yellow' : 'green' " >StyleBinding</button>
+
     
 
     <table>
@@ -57,4 +59,6 @@ export class CoursesComponent{
 //2.Register this component in an module.Here currently one module its app (->app.module.ts)
 //3. selector render the component in (component.html)
 //attribute binding
+//class binding
+
       
