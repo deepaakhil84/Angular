@@ -25,7 +25,7 @@ import {CoursesService} from "./courses.service";
     </ul>
 
     <!-- {{Add a button into the browsser}} -->
-    <button class="btn btn-primary">Submit Button</button>
+    <button class="btn btn-primary" [class.active]="isActive">Submit Button</button>
     
 
     <table>
@@ -47,6 +47,7 @@ export class CoursesComponent{
     student2="student2"
     courses;
     authors;
+    isActive=true;
 
     constructor(service:CoursesService){
         this.courses=service.getCourses();
