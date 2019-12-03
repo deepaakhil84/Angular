@@ -36,7 +36,11 @@ import {CoursesService} from "./courses.service";
     </div>
 
     <!-- {{Event filtering}} -->
+
     <input (keyup)="onKeyUp($event)"/>
+
+    <!-- {{Template variable (target) value of an input}} -->
+    <input #email (keyup.enter)="onKeyUp1(email.value)"/>
 
 
 
@@ -69,8 +73,12 @@ export class CoursesComponent{
     }
     onKeyUp($event){
         if($event.keyCode===13){
-            console.log("keyUp event",$event)
+            console.log("keyUp event",$event.target.value)
         }
+    }
+    onKeyUp1(email){
+        console.log(email);
+
     }
 
     constructor(service:CoursesService){
