@@ -25,15 +25,20 @@ import {CoursesService} from "./courses.service";
     </ul>
 
     <!-- {{Add a button into the browsser}} -->
+
     <button class="btn btn-primary" [class.active]="isActive">Class Binding</button>
     <button type="button" class="btn "[style.backgroundColor] = "isActive ? 'yellow' : 'green' " >StyleBinding</button>
+
     <!-- {{Event binding & Event bubbling}} -->
 
     <div (click)="onDivClick()">
     <button (click) = "onClick($event)">EventBinding</button>
     </div>
 
-    
+    <!-- {{Event filtering}} -->
+    <input (keyup)="onKeyUp($event)"/>
+
+
 
     <table>
     <tr>
@@ -54,12 +59,18 @@ export class CoursesComponent{
     student2="student2"
     courses;
     authors;
+ 
     isActive=true;
     onDivClick(){
         console.log("Div is clicked")
     }
     onClick($event){
         console.log("I am Clicked",$event)
+    }
+    onKeyUp($event){
+        if($event.keyCode===13){
+            console.log("keyUp event",$event)
+        }
     }
 
     constructor(service:CoursesService){
