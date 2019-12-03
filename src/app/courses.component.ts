@@ -27,6 +27,11 @@ import {CoursesService} from "./courses.service";
     <!-- {{Add a button into the browsser}} -->
     <button class="btn btn-primary" [class.active]="isActive">Class Binding</button>
     <button type="button" class="btn "[style.backgroundColor] = "isActive ? 'yellow' : 'green' " >StyleBinding</button>
+    <!-- {{Event binding & Event bubbling}} -->
+
+    <div (click)="onDivClick()">
+    <button (click) = "onClick($event)">EventBinding</button>
+    </div>
 
     
 
@@ -50,6 +55,12 @@ export class CoursesComponent{
     courses;
     authors;
     isActive=true;
+    onDivClick(){
+        console.log("Div is clicked")
+    }
+    onClick($event){
+        console.log("I am Clicked",$event)
+    }
 
     constructor(service:CoursesService){
         this.courses=service.getCourses();
