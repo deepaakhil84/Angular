@@ -39,9 +39,10 @@ import {CoursesService} from "./courses.service";
 
     <input (keyup)="onKeyUp($event)"/>
 
-    <!-- {{Template variable (target) value of an input}} -->
-    <input #email (keyup.enter)="onKeyUp1(email.value)"/>
+   <!-- {{Template variable (target) value of an input}} -->
+   <input #email (keyup.enter)="onKeyUp1(email.value)"/>
 
+<input [(ngModel)]="emailAdd" (keyup.enter)="onKeyUp2()"/>
 
 
     <table>
@@ -56,7 +57,7 @@ import {CoursesService} from "./courses.service";
 
 export class CoursesComponent{
     title = "list of courses here";
-    imageUrl =" https://placekitten.com/408/287"
+    imageUrl ="https://placekitten.com/408/287"
     imageUrl2 = "https://placekitten.com/200/286"
     colspan = 2;
     student1 = "student1"
@@ -65,6 +66,7 @@ export class CoursesComponent{
     authors;
  
     isActive=true;
+    emailAdd = 'me@example.com'
 
     onDivClick(){
         console.log("Div is clicked")
@@ -82,6 +84,10 @@ export class CoursesComponent{
 
     onKeyUp1(email){
         console.log(email);
+
+    }
+    onKeyUp2(){
+        console.log(this.emailAdd);
 
     }
 
