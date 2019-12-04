@@ -42,7 +42,15 @@ import {CoursesService} from "./courses.service";
    <!-- {{Template variable (target) value of an input}} -->
    <input #email (keyup.enter)="onKeyUp1(email.value)"/>
 
-<input [(ngModel)]="emailAdd" (keyup.enter)="onKeyUp2()"/>
+   <!-- {{Template variable (Dom) value of an input}} -->
+<input [(ngModel)]="emailAdd" (keyup.enter)="onKeyUp2()"/><br/>
+
+<!-- {{PIPES}} -->
+{{pipes.title | uppercase }}<br/>
+{{pipes.students| number}}<br/>
+{{pipes.rating | number:'1.2-2'}}<br/>
+{{pipes.price | currency:'AUD':true:'3.2-2'}}<br/>
+{{pipes.releaseDate | date:'shortDate'}}<br/>
 
 
     <table>
@@ -56,6 +64,13 @@ import {CoursesService} from "./courses.service";
 
 
 export class CoursesComponent{
+    pipes={
+        title:"Angular application",
+        rating:4.765,
+        students:7675,
+        price:34.65,
+        releaseDate:new Date(2014,3,1)
+    }
     title = "list of courses here";
     imageUrl ="https://placekitten.com/408/287"
     imageUrl2 = "https://placekitten.com/200/286"
