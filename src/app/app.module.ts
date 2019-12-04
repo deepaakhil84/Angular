@@ -8,6 +8,7 @@ import { CoursesComponent } from './courses.component';
 import { CourseComponent } from './course/course.component';
 import {CoursesService} from "./courses.service";
 import { SchoolComponent } from './school/school.component';
+import { FavouriteComponent } from './favourite/favourite.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SchoolComponent } from './school/school.component';
     CoursesComponent,
     CourseComponent,
     SchoolComponent,
-    summaryPipe
+    summaryPipe,
+    FavouriteComponent
 
     //step2.add all the components parts of this app
 ],
