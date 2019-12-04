@@ -1,3 +1,4 @@
+import { summaryPipe } from './summary.pipes';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms'
@@ -14,6 +15,8 @@ import { SchoolComponent } from './school/school.component';
     CoursesComponent,
     CourseComponent,
     SchoolComponent,
+    summaryPipe
+
     //step2.add all the components parts of this app
 ],
   imports: [

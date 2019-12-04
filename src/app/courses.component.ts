@@ -52,6 +52,9 @@ import {CoursesService} from "./courses.service";
 {{pipes.price | currency:'AUD':true:'3.2-2'}}<br/>
 {{pipes.releaseDate | date:'shortDate'}}<br/>
 
+<!-- {{custom pipes}} -->
+{{customPipes}}
+
 
     <table>
     <tr>
@@ -71,6 +74,7 @@ export class CoursesComponent{
         price:34.65,
         releaseDate:new Date(2014,3,1)
     }
+    customPipes="this is a simple line of text showing dummy text for custom pipes"
     title = "list of courses here";
     imageUrl ="https://placekitten.com/408/287"
     imageUrl2 = "https://placekitten.com/200/286"
