@@ -17,6 +17,7 @@ export class SchoolComponent  {
   counter=0;
   schools;
 
+  
   constructor(service:SchoolService) { 
     this.schools=service.getsSchool();
   }
